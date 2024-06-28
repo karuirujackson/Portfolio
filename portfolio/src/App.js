@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Profile from './pages/Profile';
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           <Route 
             path='/projects'
             element={<Projects userName='karuirujackson' />}
+          />
+          <Route 
+            path='/projects/:name'
+            element={<ProjectDetail userName='karuirujackson' />}
           />
         </Routes>
       </BrowserRouter>
