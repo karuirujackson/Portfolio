@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '../components/Link';
+import List from '../components/List';
 import { useEffect, useState } from "react";
 import './Profile.css';
 
@@ -22,6 +23,49 @@ function Profile({ userName}) {
     fetchData();
   }, [userName]);
 
+  const items = [
+    {
+      field: 'HTML_url',
+      value: <Link 
+                url={profile.html_url} 
+                title={profile.html_url}  
+              />,
+    },
+
+    {
+      field: 'Repos_url',
+      value: <Link 
+                url={profile.repos_url} 
+                title={profile.repos_url}  
+              />,
+    },
+
+    {
+      field: 'Name',
+      value: profile.name
+    },
+
+    {
+      field: 'Company',
+      value: profile.company
+    },
+
+    {
+      field: 'Location',
+      value: profile.location
+    },
+
+    {
+      field: 'Email',
+      value: profile.email
+    },
+
+    {
+      field: 'Bio',
+      value: profile.bio
+    }
+  ];
+
   return (
     <div className='Profile-container'>
       <h2>
@@ -37,42 +81,7 @@ function Profile({ userName}) {
               src={profile.avatar_url}
               alt={profile.name}
             />
-            <ul>
-            <li>
-                <span>HTML_url:</span>
-                <Link 
-                  url={profile.html_url} 
-                  title={profile.html_url} 
-                />
-              </li>
-              <li>
-                <span>Repos_url:</span>
-                <Link
-                  url={profile.repos_url}
-                  title={profile.repos_url}
-                />
-              </li>
-              <li>
-                <span>Name:</span>
-                {profile.name}
-              </li>
-              <li>
-                <span>Company:</span>
-                {profile.company}
-              </li>
-              <li>
-                <span>Location:</span>
-                {profile.location}
-              </li>
-              <li>
-                <span>Email:</span>
-                {profile.email}
-              </li>
-              <li>
-                <span>Bio:</span>
-                {profile.bio}
-              </li>
-            </ul>
+            <List items={items} />
           </div>
         )
       }
