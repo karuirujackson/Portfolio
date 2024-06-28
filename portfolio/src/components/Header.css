@@ -20,6 +20,21 @@
     color: white;
 }
 
+.App-header > nav {
+    margin-bottom: 10px;
+}
+
+.App-header > nav > .App-link {
+    margin-right: 10px;
+}
+
+.linkme {
+    font-size: 20px;
+    color: cyan;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
 @keyframes App-logo-spin {
 from {
     transform: rotate(0deg);

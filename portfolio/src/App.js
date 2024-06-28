@@ -3,6 +3,7 @@ import logo from '../src/assets/logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Profile from './pages/Profile';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
           <Route
             path='/'
             element={<Profile userName="karuirujackson" />}
+          />
+          <Route 
+            path='/projects'
+            element={<Projects userName='karuirujackson' />}
           />
         </Routes>
       </BrowserRouter>
